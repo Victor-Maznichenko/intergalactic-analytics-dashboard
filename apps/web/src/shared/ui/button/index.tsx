@@ -13,6 +13,7 @@ export const Button = ({
   children,
   ...props
 }: ButtonProps) => (
+  // eslint-disable-next-line react/button-has-type
   <button className={clsx(className, styles.button, styles[variant])} type={type} {...props}>
     {children}
   </button>
