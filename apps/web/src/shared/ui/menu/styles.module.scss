@@ -1,0 +1,35 @@
+.menu {
+    &__item, &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        column-gap: 40px;
+    }
+
+    &__item {
+        column-gap: 15px;
+        position: relative;
+
+        &:hover::after {
+            width: 100%;
+            right: auto;
+            left: auto;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            width: 0;
+            right: 0;
+            left: auto;
+            height: 2px;
+            background-color: currentColor;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+    }
+}

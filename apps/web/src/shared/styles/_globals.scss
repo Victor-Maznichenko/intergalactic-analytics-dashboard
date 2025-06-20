@@ -10,40 +10,19 @@
 }
 
 ::selection {
-  background: var(--orange-secondary);
+  background: var(--orange);
   color: var(--text);
-}
-
-html {
-  --site-scale: calc(100vw / var(--desktop));
-
-  font-size: calc(var(--site-scale) * #{16});
-  scrollbar-gutter: stable;
-
-  @include to(var(--lg)) {
-    --site-scale: calc(100vw / var(--lg));
-  }
-
-  @include to(var(--tablet)) {
-    --site-scale: calc(100vw / var(--tablet));
-  }
-
-  @include to(var(--mobile)) {
-    --site-scale: calc(100vw / var(--mobile));
-  }
 }
 
 body {
   font-family: Roboto, sans-serif;
-  background-color: var(--background);
-  font-optical-sizing: auto;
-  color: var(--text);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--black-secondary);
+  background-color: var(--purple-1);
   overflow-x: hidden;
-  font-size: 17px;
-
-  @include to($mobile) {
-    font-size: 15px;
-  }
+  padding: 40px;
 }
 
 button {

@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__start {
+        column-gap: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__tag {
+        background-color: var(--purple-3);
+        padding: 5px 6px 6px;
+        font-weight: 500;
+        line-height: 1;
+    }
+}
