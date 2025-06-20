@@ -1,0 +1,5 @@
+@use 'mixins' as *;
+
+@include font-face(Roboto, 400, 'Regular');
+@include font-face(Roboto, 500, 'Medium');
+@include font-face(Roboto, 700, 'Bold');
