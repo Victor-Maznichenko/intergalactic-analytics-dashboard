@@ -1,11 +1,16 @@
 /* eslint-disable no-alert */
-import { useState, useRef, useCallback, DragEvent } from 'react';
-import { Status } from './constants';
+import { useState, useRef, DragEvent } from 'react';
+import { model } from '../model';
 
-export const useDragAndDrop = () => {
-  const [status, setStatus] = useState(Status.Default);
+export const useFileUploader = () => {
+  const file = model.useFileUploaderStore((state) => state.file);
+  const status = model.useFileUploaderStore((state) => state.status);
+  const setFile = model.useFileUploaderStore((state) => state.setFile);
+  const getAggregate = model.useFileUploaderStore((state) => state.getAggregate);
+  const progress = model.useFileUploaderStore((state) => state.progress);
+  const reset = model.useFileUploaderStore((state) => state.reset);
+
   const [dragCounter, setDragCounter] = useState(0);
-  const [currentFile, setCurrentFile] = useState<File | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Включаем подсветку при ВХОДЕ
@@ -25,48 +30,36 @@ export const useDragAndDrop = () => {
     event.preventDefault();
   };
 
-  const handleFile = useCallback(
-    (file: File) => {
-      if (file.type === 'text/csv' || file.name.endsWith('.csv')) {
-        setCurrentFile(file);
-        setStatus(Status.Uploaded);
-      } else {
-        alert('Пожалуйста, загрузите файл в формате CSV.');
-      }
-    },
-    [setCurrentFile],
-  );
-
   // Когда сбросили файл(ы) над текущим блоком
   const handleDrop = (event: DragEvent) => {
     event.preventDefault();
     setDragCounter(0);
     if (event.dataTransfer?.files.length) {
-      handleFile(event.dataTransfer.files[0]);
+      setFile(event.dataTransfer.files[0]);
     }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      handleFile(file);
+    const currentFile = event.target.files?.[0];
+    if (currentFile) {
+      setFile(currentFile);
     }
   };
 
   const handleReset = () => {
+    reset();
     if (inputRef.current) {
       inputRef.current.value = '';
     }
-    setStatus(Status.Default);
-    setCurrentFile(null);
-    setDragCounter(0);
   };
 
   return {
+    file,
     status,
+    progress,
     inputRef,
-    currentFile,
     isDragEnter: !!dragCounter,
+    getAggregate,
     handleDragEnter,
     handleDragLeave,
     handleDragOver,

@@ -4,7 +4,6 @@ import { Header } from '@/widgets';
 import { ROUTES } from '../shared/lib';
 import { Analyst, Generator, History, NotFound } from '../pages';
 import styles from './styles.module.scss';
-import { FileUploader } from '../shared/ui/file-uploader/ui';
 
 export const App = () => (
   <>
@@ -16,7 +15,6 @@ export const App = () => (
         <Route path={ROUTES.Generator} element={<Generator />} />
         <Route path={ROUTES.NotFound} element={<NotFound />} />
       </Routes>
-      <FileUploader onFileAccepted={() => alert('Файл загружен')} />
     </main>
   </>
 );

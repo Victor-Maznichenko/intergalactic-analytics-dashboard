@@ -1,10 +1,4 @@
-export enum Status {
-  Default = 'default',
-  Parsing = 'parsing',
-  Uploaded = 'uploaded',
-  Done = 'done',
-  Fail = 'fail',
-}
+import { Status } from '@/shared/lib';
 
 export const statusMessages: Record<Status, string> = {
   [Status.Default]: 'или перетащите сюда',

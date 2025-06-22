@@ -25,6 +25,7 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/prop-types': 'off',
     'react/jsx-no-bind': 'off',
+    'no-restricted-syntax': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

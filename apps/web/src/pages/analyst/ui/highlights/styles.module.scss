@@ -1,0 +1,15 @@
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 10px;
+}
+
+.highlights2 {
+  font-size: 40px;
+  color: #cb81ff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}

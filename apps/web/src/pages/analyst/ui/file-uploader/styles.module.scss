@@ -1,0 +1,36 @@
+.fileUploader {
+    text-align: center;
+    &__description {
+        margin-bottom: 20px;
+    }
+
+  &__dropzone {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+    border-radius: 40px;
+    background-color: var(--purple-2);
+    transition: background-color var(--trans-fast);
+    margin-bottom: 20px;
+
+    &.transparent, &.fail {
+        background-color: transparent;
+        border: 1px solid var(--orange);
+    }
+
+    &.transparent {
+        border-color: var(--black-2);
+    }
+  }
+
+  &.enter {
+    background-color: var(--green-2);
+  }
+
+  &__input {
+    display: none;
+  }
+}

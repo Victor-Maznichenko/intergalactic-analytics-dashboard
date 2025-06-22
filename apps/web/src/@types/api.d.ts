@@ -1,22 +1,11 @@
-interface Product {
-  id: number;
-  img: string;
-  title: string;
-  price: number;
-  rate: number;
-}
-
-interface ProductCart extends Product {
-  quantity: number;
-  totalQuantity: number;
-}
-
-interface ProductsList {
-  id: number;
-  title: string;
-  list: Product[];
-}
-
-interface ProductsResponse {
-  products: ProductsList[];
+interface AggregationData {
+  totalSpendGalactic?: number;
+  rowsAffected: number;
+  lessSpentAt: number;
+  bigSpentAt: number;
+  lessSpentValue: number;
+  bigSpentValue: number;
+  averageSpendGalactic: number;
+  bigSpentCiv: string;
+  lessSpentCiv: string;
 }

@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import { ButtonHTMLAttributes, MouseEventHandler, useMemo } from 'react';
+import { Icons, Button } from '@/shared/ui';
+import { statusMessages } from './lib';
+import { Status } from '@/shared/lib';
 import styles from './styles.module.scss';
-import { Button } from '../../../button';
-import { Icons } from '../../../icons';
-import { Status, statusMessages } from '../../lib';
 
 export interface UploadButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   status?: Status;
+  percent?: number;
   fileName?: string;
   onReset?: MouseEventHandler<HTMLButtonElement>;
 }
