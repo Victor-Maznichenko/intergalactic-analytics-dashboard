@@ -1,0 +1,56 @@
+.uploadButton {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 110%;
+    user-select: none;
+    
+    &__top {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
+.description {
+    pointer-events: none;
+}
+
+.button {
+    min-width: 360px;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 15px 27px;
+    border-radius: 10px;
+    color: var(--black-2);
+    background-color: var(--white);
+    transition: background-color var(--trans-fast), opacity var(--trans-fast);
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:disabled {
+        background-color: var(--gray-2);
+        color: var(--gray-1);
+        opacity: 1;
+    }
+
+    &.fail {
+        background-color: var(--orange);
+        color: var(--white);
+    }
+
+    &.done {
+        background-color: var(--green-2);
+    }
+    
+    &.parsing {
+        min-width: 330px;
+    }
+    
+    &.parsing, &.uploaded {
+        background-color: var(--purple-3);
+    }
+}

@@ -5,33 +5,43 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 17px;
-}
-
-.contained-yellow {
-  padding: 4px;
-  background-color: var(--orange-secondary);
-  color: var(--white);
-  border-radius: 50%;
-}
-
-.contained-black {
-  padding: 22px 40px;
-  font-weight: 600;
-  line-height: 21px;
-  color: var(--white);
-  border-radius: 20px;
-  background-color: var(--dark);
-  box-shadow: 0px 0px 20px var(--black-25);
-}
-
-.text {
-  font-weight: 600;
-  line-height: 21px;
-  color: var(--black-primary);
-  transition: filter var(--trans-fast);
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 110%;
+  padding: 20px 27px;
+  border-radius: 25px;
+  transition: opacity var(--trans-fast);
 
   &:hover {
-    filter: drop-shadow(0px 0px 24px var(--indigo-light));
+    opacity: 0.7;
   }
+
+  &:disabled {
+    background-color: var(--gray-2);
+    color: var(--gray-1);
+    opacity: 1;
+  }
+}
+
+.green {
+  background-color: var(--green-1);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.black, .black-icon {
+  background-color: var(--black-2);
+  color: var(--white);
+}
+
+.white, .white-icon {
+  background-color: var(--white);
+}
+
+.black-icon, .white-icon {
+  padding: 26px;
+  line-height: 0;
+  font-size: 0;
 }

@@ -1,13 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 import { Icons, Menu } from '@/shared/ui';
+import { ROUTES } from '@/shared/lib';
 import styles from './styles.module.scss';
 
-export const Header = () => (
-  <header className={styles.header}>
+interface HeaderProps {
+  className: string;
+}
+
+export const Header = ({ className }: HeaderProps) => (
+  <header className={clsx(styles.header, className)}>
     <div className={styles.header__start}>
-      <a href="#">
+      <Link to={ROUTES.Analyst}>
         <Icons.Logo />
-      </a>
+      </Link>
       <div className={styles.header__tag}>Межгалактическая аналитика</div>
     </div>
     <Menu />

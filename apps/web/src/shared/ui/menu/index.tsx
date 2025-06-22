@@ -33,7 +33,7 @@ export const Menu = () => (
       {MENU_ITEMS.map(({ iconName, text, to }) => {
         const Icon = Icons[iconName];
         return (
-          <li>
+          <li key={to}>
             <Link className={styles.menu__item} to={to}>
               <Icon />
               <span>{text}</span>

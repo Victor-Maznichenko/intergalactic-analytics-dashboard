@@ -3,17 +3,10 @@ import { ButtonHTMLAttributes } from 'react';
 import styles from './styles.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'contained-yellow' | 'contained-black' | 'text';
+  variant?: 'green' | 'yellow' | 'black' | 'white' | 'black-icon' | 'white-icon';
 }
 
-export const Button = ({
-  variant = 'contained-yellow',
-  type = 'button',
-  className,
-  children,
-  ...props
-}: ButtonProps) => (
-  // eslint-disable-next-line react/button-has-type
+export const Button = ({ variant = 'green', type = 'button', className, children, ...props }: ButtonProps) => (
   <button className={clsx(className, styles.button, styles[variant])} type={type} {...props}>
     {children}
   </button>

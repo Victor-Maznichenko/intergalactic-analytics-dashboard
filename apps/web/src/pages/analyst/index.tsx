@@ -1,1 +1,5 @@
-export const Analyst = () => <div>Analyst</div>;
+export const Analyst = () => (
+  <section>
+    <p>Загрузите</p>
+  </section>
+);
